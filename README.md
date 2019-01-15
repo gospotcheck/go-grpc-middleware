@@ -1,10 +1,10 @@
 # Go gRPC Middleware
 
-[![Travis Build](https://travis-ci.org/grpc-ecosystem/go-grpc-middleware.svg?branch=master)](https://travis-ci.org/grpc-ecosystem/go-grpc-middleware)
-[![Go Report Card](https://goreportcard.com/badge/github.com/grpc-ecosystem/go-grpc-middleware)](https://goreportcard.com/report/github.com/grpc-ecosystem/go-grpc-middleware)
-[![GoDoc](http://img.shields.io/badge/GoDoc-Reference-blue.svg)](https://godoc.org/github.com/grpc-ecosystem/go-grpc-middleware)
-[![SourceGraph](https://sourcegraph.com/github.com/grpc-ecosystem/go-grpc-middleware/-/badge.svg)](https://sourcegraph.com/github.com/grpc-ecosystem/go-grpc-middleware/?badge)
-[![codecov](https://codecov.io/gh/grpc-ecosystem/go-grpc-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/grpc-ecosystem/go-grpc-middleware)
+[![Travis Build](https://travis-ci.org/gospotcheck/go-grpc-middleware.svg?branch=master)](https://travis-ci.org/gospotcheck/go-grpc-middleware)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gospotcheck/go-grpc-middleware)](https://goreportcard.com/report/github.com/gospotcheck/go-grpc-middleware)
+[![GoDoc](http://img.shields.io/badge/GoDoc-Reference-blue.svg)](https://godoc.org/github.com/gospotcheck/go-grpc-middleware)
+[![SourceGraph](https://sourcegraph.com/github.com/gospotcheck/go-grpc-middleware/-/badge.svg)](https://sourcegraph.com/github.com/gospotcheck/go-grpc-middleware/?badge)
+[![codecov](https://codecov.io/gh/gospotcheck/go-grpc-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/gospotcheck/go-grpc-middleware)
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![quality: production](https://img.shields.io/badge/quality-production-orange.svg)](#status)
 [![Slack](slack.png)](https://join.slack.com/t/improbable-eng/shared_invite/enQtMzQ1ODcyMzQ5MjM4LWY5ZWZmNGM2ODc5MmViNmQ3ZTA3ZTY3NzQwOTBlMTkzZmIxZTIxODk0OWU3YjZhNWVlNDU3MDlkZGViZjhkMjc)
@@ -14,7 +14,7 @@
 ## Middleware
 
 [gRPC Go](https://github.com/grpc/grpc-go) recently acquired support for
-Interceptors, i.e. [middleware](https://medium.com/@matryer/writing-middleware-in-golang-and-how-go-makes-it-so-much-fun-4375c1246e81#.gv7tdlghs) 
+Interceptors, i.e. [middleware](https://medium.com/@matryer/writing-middleware-in-golang-and-how-go-makes-it-so-much-fun-4375c1246e81#.gv7tdlghs)
 that is executed either on the gRPC Server before the request is passed onto the user's application logic, or on the gRPC client either around the user call. It is a perfect way to implement
 common patterns: auth, logging, message, validation, retries or monitoring.
 
@@ -25,7 +25,7 @@ some of them itself, but also will link to useful external repos.
 `grpc_middleware` itself provides support for chaining interceptors, here's an example:
 
 ```go
-import "github.com/grpc-ecosystem/go-grpc-middleware"
+import "github.com/gospotcheck/go-grpc-middleware"
 
 myServer := grpc.NewServer(
     grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(
@@ -52,7 +52,7 @@ myServer := grpc.NewServer(
 *Please send a PR to add new interceptors or middleware to this list*
 
 #### Auth
-   * [`grpc_auth`](auth) - a customizable (via `AuthFunc`) piece of auth middleware 
+   * [`grpc_auth`](auth) - a customizable (via `AuthFunc`) piece of auth middleware
 
 #### Logging
    * [`grpc_ctxtags`](tags/) - a library that adds a `Tag` map to context, with data populated from request body
@@ -61,8 +61,8 @@ myServer := grpc.NewServer(
 
 
 #### Monitoring
-   * [`grpc_prometheus`⚡](https://github.com/grpc-ecosystem/go-grpc-prometheus) - Prometheus client-side and server-side monitoring middleware
-   * [`otgrpc`⚡](https://github.com/grpc-ecosystem/grpc-opentracing/tree/master/go/otgrpc) - [OpenTracing](http://opentracing.io/) client-side and server-side interceptors
+   * [`grpc_prometheus`⚡](https://github.com/gospotcheck/go-grpc-prometheus) - Prometheus client-side and server-side monitoring middleware
+   * [`otgrpc`⚡](https://github.com/gospotcheck/grpc-opentracing/tree/master/go/otgrpc) - [OpenTracing](http://opentracing.io/) client-side and server-side interceptors
    * [`grpc_opentracing`](tracing/opentracing) - [OpenTracing](http://opentracing.io/) client-side and server-side interceptors with support for streaming and handler-returned tags
 
 #### Client
